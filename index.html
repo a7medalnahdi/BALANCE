@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueHome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3a3032',
+            accent: '#f1b988',
+            light: '#edede5',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+    .glass {
+      backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fade-in 1s ease-out both;
+    }
+  </style>
+
+<script type="module" src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="bg-primary text-white scroll-smooth">
+  
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-primary/80 backdrop-blur-md shadow z-50 px-6 py-4 flex justify-center items-center">
+  <img src="https://i.ibb.co/MDHtH2RG/LOGO-3x.png" alt="شعار شركة Balance" class="h-12">
+</nav>
+
+  <!-- Header / Hero -->
+  <section class="relative h-screen flex flex-col justify-center items-center text-center px-6 bg-cover bg-center pt-20" style="background-image: url('https://i.ibb.co/1YmZ2Yh0/HEADER-3x.png');">
+    <div class="glass p-10 rounded-2xl shadow-lg max-w-3xl animate-fade-in">
+      <h1 class="text-4xl font-bold mb-4">حياة مرفهة تبدأ <span class="text-[#3a3032]">من هنا</span></h1>
+    </div>
+  </section>
+
+  <!-- عن الشركة -->
+  <section id="about" class="py-20 px-6 bg-light text-primary" data-aos="fade-up">
+    <h2 class="text-center text-3xl font-bold mb-6"><ph-icon name="buildings" size="32"></ph-icon> عن بالانس</h2>
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-lg leading-relaxed">Balance هي شركة انبثقت من شركة خوالد العقارية ذات الخبرة العريقة في القطاع العقاري ، انطلقت برؤية واضحة تجمع بين الأصالة والابتكار. مستفيدة من التجارب المتراكمة والمعرفة العميقة التي اكتسبتها خوالد العقارية على مدى السنوات، عملت Balance على تطوير حلول استثمارية وعمرانية حديثة، ترتكز على نماذج جديدة في التطوير العقاري تواكب متطلبات السوق وتفتح آفاقًا أوسع للمستثمرين.</p>
+    </div>
+  </section>
+
+  <!-- لماذا نحن -->
+  <section id="features" class="py-20 px-6 bg-white text-primary" data-aos="fade-up">
+  <h2 class="text-center text-3xl font-bold mb-12">قيم بالانس</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+  <div class="mb-2 text-3xl text-accent"><i class="ph ph-brain"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">التصميم المبتكر</h3>
+    <p class="text-sm">نقدّم تصاميم عقارية مبتكرة تتجاوز التوقعات وتلبي احتياجات المستقبل.</p>
+  </div>
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+    <div class="mb-2 text-3xl text-accent"><i class="ph ph-chart-bar"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">التحليل والدراسات الاقتصادية</h3>
+    <p class="text-sm">نحن متخصصون في تحليل فرص الاستثمار العقاري واختيار المشاريع ذات القيمة المضافة العالية.</p>
+  </div>
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+    <div class="mb-2 text-3xl text-accent"><i class="ph ph-magnifying-glass"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">البحث والتطوير</h3>
+    <p class="text-sm">نسعى للبحث والابتكار في تطوير الحلول العقارية لتلبية متطلبات العملاء والسوق.</p>
+  </div>
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+    <div class="mb-2 text-3xl text-accent"><i class="ph ph-leaf"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">التطوير المستدام</h3>
+    <p class="text-sm">نلتزم بتطوير مشاريع تتمتع بالاستدامة البيئية والاقتصادية والاجتماعية.</p>
+  </div>
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+    <div class="mb-2 text-3xl text-accent"><i class="ph ph-diamond"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">التفرد والفخامة</h3>
+    <p class="text-sm">نقدّم مشاريع عقارية فريدة تجمع بين التفرد والفخامة في كل جزء من التصميم والبناء.</p>
+  </div>
+  <div class="bg-light p-6 rounded-xl shadow-lg border-r-4 border-accent">
+    <div class="mb-2 text-3xl text-accent"><i class="ph ph-seal-check"></i></div>
+  <h3 class="text-xl font-bold mb-2 text-primary">الجودة الفائقة</h3>
+    <p class="text-sm">نسعى لتحقيق معايير الجودة العالية في جميع مراحل تطوير المشاريع العقارية.</p>
+  </div>
+</div>
+    
+  </div>
+</section>
+
+  <!-- سجل اهتمامك -->
+  <section id="contact" class="py-20 px-6 bg-primary text-white" data-aos="fade-up">
+  <div class="max-w-2xl mx-auto">
+    <form class="bg-white text-primary p-6 rounded-xl shadow-md space-y-4">
+      <h3 class="text-2xl font-bold mb-4">سجّل اهتمامك</h3>
+      <input type="text" placeholder="الاسم الكامل" class="w-full p-3 rounded border border-gray-300 focus:outline-none">
+      <input type="email" placeholder="البريد الإلكتروني" class="w-full p-3 rounded border border-gray-300 focus:outline-none">
+      <input type="tel" placeholder="رقم الجوال" dir="rtl" class="w-full p-3 rounded border border-gray-300 focus:outline-none">
+      <textarea rows="4" placeholder="رسالتك" class="w-full p-3 rounded border border-gray-300 focus:outline-none"></textarea>
+      <button type="submit" class="bg-accent text-white px-5 py-2 rounded-full hover:bg-blue-600 transition">إرسال</button>
+    </form>
+  </div>
+</section>
+
+  <!-- صور من مشاريعنا -->
+  <section id="projects" class="py-20 px-6 bg-light text-primary" data-aos="fade-up">
+    <h2 class="text-center text-3xl font-bold mb-12">صور من مشاريعنا</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <img src="https://i.ibb.co/WNGnm5Mk/2-3x.png" alt="مشروع 1" class="rounded-xl shadow-md">
+      <img src="https://i.ibb.co/kvqMwy9/1-3x.png" alt="مشروع 2" class="rounded-xl shadow-md">
+      <img src="https://i.ibb.co/rf5QD5Bn/3-3x.png" alt="مشروع 3" class="rounded-xl shadow-md">
+    </div>
+  </section>
+
+  <!-- تحميل ملف المشروع -->
+<section class="bg-white text-primary py-20 px-6" data-aos="fade-up">
+  <div class="text-center">
+    <h2 class="text-3xl font-bold mb-6">تحميل ملف المشروع</h2>
+    <p class="mb-6">يمكنك تحميل ملف المشروع الكامل بصيغة PDF للاطلاع على التفاصيل والمخططات.</p>
+    <a href="https://drive.google.com/file/d/1GQFVE4nsMXyVnYgz9sAdSP9Be39RtUzr/view?usp=share_link" target="_blank" class="inline-flex items-center gap-2 bg-accent text-white text-lg font-semibold px-6 py-3 rounded-full shadow-md hover:opacity-90 transition">
+      <i class="ph ph-download-simple"></i>
+      تحميل الملف
+    </a>
+  </div>
+</section>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      pagination: { el: '.swiper-pagination', clickable: true },
+    });
+  </script>
+
+
+  <footer class="bg-primary text-white py-12 px-6">
+  <div class="max-w-4xl mx-auto flex flex-col items-center text-center space-y-4">
+    <div>
+      <h4 class="font-bold mb-2 text-lg">التواصل</h4>
+      <p class="text-sm">contact@Balance.sa</p>
+      <p class="text-sm">01122341</p>
+    </div>
+    <p class="text-xs mt-4">© 2025 بالانس. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+
+
+
+
+
