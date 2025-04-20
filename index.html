@@ -68,15 +68,6 @@
       height: 450px;
       width: 100%;
     }
-    /* Animation for brand */
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
-    }
     /* مظهر اللست الخيارات المنسدلة */
     select {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f1b988' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -149,7 +140,6 @@
   <!-- سجل اهتمامك -->
   <section id="contact" class="py-24 px-6 bg-white text-primary" data-aos="fade-up" data-aos-duration="1000">
     <div class="container mx-auto max-w-2xl">
-      <h2 class="text-center text-4xl font-bold mb-10">تواصل معنا</h2>
       <div class="bg-light p-8 rounded-2xl shadow-xl">
         <h3 class="text-2xl font-bold mb-6 text-accent">سجّل اهتمامك</h3>
         <form class="space-y-4">
@@ -210,7 +200,7 @@
         </div>
         
         <!-- Project Locations List -->
-        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
           <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.7852" data-lng="46.7190">
             <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس الياسمين</h3>
             <p class="text-xs opacity-75 mr-5">شمال الرياض</p>
@@ -259,21 +249,21 @@
           <div class="swiper-slide">
             <img src="https://i.ibb.co/WNGnm5Mk/2-3x.png" alt="مشروع 1" class="w-full h-[500px] object-cover">
             <div class="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 class="text-2xl font-bold text-white">فلل فاخرة - الرياض</h3>
+              <h3 class="text-2xl font-bold text-white">بالانس المروج</h3>
               <p class="text-white/80">تصميم عصري يجمع بين الأصالة والحداثة</p>
             </div>
           </div>
           <div class="swiper-slide">
             <img src="https://i.ibb.co/kvqMwy9/1-3x.png" alt="مشروع 2" class="w-full h-[500px] object-cover">
             <div class="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 class="text-2xl font-bold text-white">مجمع سكني - جدة</h3>
+              <h3 class="text-2xl font-bold text-white">بالانس المروج</h3>
               <p class="text-white/80">وحدات سكنية فاخرة بإطلالات خلابة</p>
             </div>
           </div>
           <div class="swiper-slide">
             <img src="https://i.ibb.co/rf5QD5Bn/3-3x.png" alt="مشروع 3" class="w-full h-[500px] object-cover">
             <div class="absolute bottom-0 right-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-              <h3 class="text-2xl font-bold text-white">مجمع تجاري - الدمام</h3>
+              <h3 class="text-2xl font-bold text-white">بالانس المروج</h3>
               <p class="text-white/80">تصميم عصري لتجربة تسوق فريدة</p>
             </div>
           </div>
@@ -291,8 +281,7 @@
       <div class="bg-light rounded-2xl p-10 shadow-xl">
         <i class="ph ph-file-pdf text-6xl text-accent mb-4"></i>
         <h2 class="text-3xl font-bold mb-6">تحميل ملف المشروع</h2>
-        <p class="mb-8 text-lg">يمكنك تحميل ملف المشروع الكامل بصيغة PDF للاطلاع على التفاصيل والمخططات وكافة المعلومات الخاصة بمشاريعنا.</p>
-        <a href="https://drive.google.com/file/d/1GQFVE4nsMXyVnYgz9sAdSP9Be39RtUzr/view?usp=share_link" target="_blank" 
+        <a href="https://drive.google.com/drive/folders/1eX7QK4yy4mOzUsdfGjmGThhLcqyMex7i?usp=share_link" target="_blank" 
            class="inline-flex items-center gap-3 bg-accent text-white text-lg font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl hover:bg-accent/90 transition transform hover:-translate-y-1">
           <i class="ph ph-download-simple text-xl"></i>
           تحميل الملف الكامل
