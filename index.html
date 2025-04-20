@@ -77,27 +77,31 @@
     .float-animation {
       animation: float 6s ease-in-out infinite;
     }
+    /* مظهر اللست الخيارات المنسدلة */
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f1b988' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 10px center;
+      padding-left: 40px;
+    }
+    select:focus {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23f1b988' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='18 15 12 9 6 15'%3E%3C/polyline%3E%3C/svg%3E");
+    }
   </style>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script type="module" src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body class="bg-primary text-white scroll-smooth custom-scrollbar">
   <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#" class="flex items-center space-x-2 float-animation">
+    <div class="container mx-auto px-6 py-3 flex justify-center items-center">
+      <a href="#" class="float-animation">
         <img src="https://i.ibb.co/MDHtH2RG/LOGO-3x.png" alt="شعار شركة Balance" class="h-14">
       </a>
       
-      <div class="hidden md:flex space-x-1 space-x-reverse">
-        <a href="#about" class="px-4 py-2 rounded-lg text-white hover:text-accent transition duration-300">عن الشركة</a>
-        <a href="#contact" class="px-4 py-2 rounded-lg text-white hover:text-accent transition duration-300">تواصل معنا</a>
-        <a href="#project-map" class="px-4 py-2 rounded-lg text-white hover:text-accent transition duration-300">خريطة المشاريع</a>
-        <a href="#projects" class="px-4 py-2 rounded-lg text-white hover:text-accent transition duration-300">مشاريعنا</a>
-      </div>
-      
-      <button class="md:hidden focus:outline-none" id="menu-button">
+      <button class="absolute right-6 md:hidden focus:outline-none" id="menu-button">
         <i class="ph ph-list text-2xl"></i>
       </button>
     </div>
@@ -118,7 +122,6 @@
     style="background-image: url('https://i.ibb.co/1YmZ2Yh0/HEADER-3x.png');">
     <div class="absolute inset-0 bg-primary/40"></div>
     <div class="glass p-12 rounded-2xl max-w-3xl animate-fade-in relative">
-      <img src="https://i.ibb.co/MDHtH2RG/LOGO-3x.png" alt="شعار شركة Balance" class="h-20 mx-auto mb-6">
       <h1 class="text-5xl font-bold mb-6 text-shadow">حياة مرفهة تبدأ <span class="text-accent">من هنا</span></h1>
       <p class="text-xl mb-8 opacity-90">تجربة سكنية فريدة تجمع بين الفخامة والراحة والتصميم المبتكر</p>
       <a href="#contact" class="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-3 rounded-full transition duration-300 inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-1">سجل اهتمامك الآن</a>
@@ -144,31 +147,45 @@
   </section>
 
   <!-- سجل اهتمامك -->
-  <section id="contact" class="py-24 px-6 bg-primary text-white" data-aos="fade-up" data-aos-duration="1000">
+  <section id="contact" class="py-24 px-6 bg-white text-primary" data-aos="fade-up" data-aos-duration="1000">
     <div class="container mx-auto max-w-2xl">
       <h2 class="text-center text-4xl font-bold mb-10">تواصل معنا</h2>
-      <div class="bg-dark/30 p-8 rounded-2xl shadow-xl">
+      <div class="bg-light p-8 rounded-2xl shadow-xl">
         <h3 class="text-2xl font-bold mb-6 text-accent">سجّل اهتمامك</h3>
         <form class="space-y-4">
           <div>
             <label class="block text-sm font-medium mb-1">الاسم الكامل</label>
             <input type="text" placeholder="أدخل اسمك الكامل" 
-                class="w-full p-3 rounded-lg border border-gray-700 bg-dark/50 text-white focus:outline-none focus:ring-2 focus:ring-accent transition">
+                class="w-full p-3 rounded-lg border border-gray-300 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-accent transition">
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">البريد الإلكتروني</label>
             <input type="email" placeholder="أدخل بريدك الإلكتروني" 
-                class="w-full p-3 rounded-lg border border-gray-700 bg-dark/50 text-white focus:outline-none focus:ring-2 focus:ring-accent transition">
+                class="w-full p-3 rounded-lg border border-gray-300 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-accent transition">
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">رقم الجوال</label>
             <input type="tel" placeholder="أدخل رقم جوالك" dir="rtl" 
-                class="w-full p-3 rounded-lg border border-gray-700 bg-dark/50 text-white focus:outline-none focus:ring-2 focus:ring-accent transition">
+                class="w-full p-3 rounded-lg border border-gray-300 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-accent transition">
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">المشروع الذي تهتم به</label>
+            <select class="w-full p-3 rounded-lg border border-gray-300 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-accent transition appearance-none">
+              <option value="" disabled selected>اختر المشروع</option>
+              <option value="yasmine">بالانس الياسمين</option>
+              <option value="nada">بالانس الندى</option>
+              <option value="morooj">بالانس المروج</option>
+              <option value="moghrazat">بالانس المغرزات</option>
+              <option value="solaimaniah">بالانس السليمانية</option>
+              <option value="rabwah">بالانس الربوة</option>
+              <option value="olaya">بالانس العليا</option>
+              <option value="saadah">بالانس السعادة</option>
+            </select>
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">رسالتك</label>
             <textarea rows="4" placeholder="اكتب رسالتك هنا..." 
-                class="w-full p-3 rounded-lg border border-gray-700 bg-dark/50 text-white focus:outline-none focus:ring-2 focus:ring-accent transition"></textarea>
+                class="w-full p-3 rounded-lg border border-gray-300 bg-white text-primary focus:outline-none focus:ring-2 focus:ring-accent transition"></textarea>
           </div>
           <button type="submit" 
               class="w-full bg-accent hover:bg-accent/90 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
@@ -193,30 +210,38 @@
         </div>
         
         <!-- Project Locations List -->
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="24.7136" data-lng="46.6753">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع الرياض 1</h3>
-            <p class="text-sm opacity-75">حي النرجس، شمال الرياض</p>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 md:gap-4">
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.7852" data-lng="46.7190">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس الياسمين</h3>
+            <p class="text-xs opacity-75 mr-5">شمال الرياض</p>
           </div>
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="24.6917" data-lng="46.7169">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع الرياض 2</h3>
-            <p class="text-sm opacity-75">حي الياسمين، شرق الرياض</p>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.7620" data-lng="46.6551">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس الندى</h3>
+            <p class="text-xs opacity-75 mr-5">شمال الرياض</p>
           </div>
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="21.4858" data-lng="39.1925">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع جدة</h3>
-            <p class="text-sm opacity-75">حي الشاطئ، غرب جدة</p>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.7514" data-lng="46.6364">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس المروج</h3>
+            <p class="text-xs opacity-75 mr-5">شمال الرياض</p>
           </div>
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="26.3927" data-lng="50.1012">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع الدمام</h3>
-            <p class="text-sm opacity-75">حي الشاطئ، الدمام</p>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.8021" data-lng="46.7255">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس المغرزات</h3>
+            <p class="text-xs opacity-75 mr-5">شمال الرياض</p>
           </div>
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="24.4539" data-lng="39.6142">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع المدينة</h3>
-            <p class="text-sm opacity-75">حي الروضة، المدينة المنورة</p>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.6682" data-lng="46.7234">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس السليمانية</h3>
+            <p class="text-xs opacity-75 mr-5">وسط الرياض</p>
           </div>
-          <div class="bg-light rounded-lg p-4 hover:bg-accent/30 transition cursor-pointer project-location" data-lat="24.0889" data-lng="38.0650">
-            <h3 class="font-bold flex items-center gap-2"><i class="ph ph-map-pin text-accent"></i> مشروع نيوم</h3>
-            <p class="text-sm opacity-75">منطقة المخطط الرئيسي، نيوم</p>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.6384" data-lng="46.6866">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس الربوة</h3>
+            <p class="text-xs opacity-75 mr-5">وسط الرياض</p>
+          </div>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.6908" data-lng="46.6777">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس العليا</h3>
+            <p class="text-xs opacity-75 mr-5">وسط الرياض</p>
+          </div>
+          <div class="bg-light rounded-lg p-2 md:p-4 hover:bg-accent/30 transition cursor-pointer project-location text-sm md:text-base" data-lat="24.6003" data-lng="46.7767">
+            <h3 class="font-bold flex items-center gap-1 md:gap-2 text-sm md:text-base"><i class="ph ph-map-pin text-accent"></i> بالانس السعادة</h3>
+            <p class="text-xs opacity-75 mr-5">شرق الرياض</p>
           </div>
         </div>
       </div>
@@ -224,7 +249,7 @@
   </section>
 
   <!-- صور من مشاريعنا -->
-  <section id="projects" class="py-24 px-6 bg-primary text-white" data-aos="fade-up" data-aos-duration="1000">
+  <section id="projects" class="py-24 px-6 bg-white text-primary" data-aos="fade-up" data-aos-duration="1000">
     <div class="container mx-auto max-w-6xl">
       <h2 class="text-center text-4xl font-bold mb-10">مشاريعنا</h2>
       
@@ -278,7 +303,7 @@
 
   <footer class="bg-dark text-white py-12 px-6">
     <div class="container mx-auto max-w-6xl">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <img src="https://i.ibb.co/MDHtH2RG/LOGO-3x.png" alt="شعار شركة Balance" class="h-14 mb-4">
           <p class="text-white/70 mb-4">شركة رائدة في مجال التطوير العقاري، تقدم حلولاً عقارية مبتكرة تجمع بين الفخامة والراحة.</p>
@@ -296,16 +321,6 @@
               <i class="ph ph-youtube-logo text-xl"></i>
             </a>
           </div>
-        </div>
-        
-        <div>
-          <h4 class="text-xl font-bold mb-4">روابط سريعة</h4>
-          <ul class="space-y-2">
-            <li><a href="#about" class="text-white/70 hover:text-accent transition">عن الشركة</a></li>
-            <li><a href="#contact" class="text-white/70 hover:text-accent transition">تواصل معنا</a></li>
-            <li><a href="#project-map" class="text-white/70 hover:text-accent transition">خريطة المشاريع</a></li>
-            <li><a href="#projects" class="text-white/70 hover:text-accent transition">مشاريعنا</a></li>
-          </ul>
         </div>
         
         <div>
@@ -343,8 +358,7 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <!-- Google Maps API - Replace YOUR_API_KEY with an actual key when deploying -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   
   <script>
     // Initialize AOS animations
@@ -421,72 +435,63 @@
       });
     });
     
-    // Google Maps initialization
-    function initMap() {
-      // Default location (Riyadh)
-      const defaultLocation = { lat: 24.7136, lng: 46.6753 };
+    // OpenStreetMap initialization with Leaflet
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize the map
+      const map = L.map('map').setView([24.7136, 46.6753], 11);
       
-      // Create map
-      const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 6,
-        center: defaultLocation,
-        styles: [
-          {
-            "featureType": "all",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#242f3e" }]
-          },
-          {
-            "featureType": "all",
-            "elementType": "labels.text.fill",
-            "stylers": [{ "color": "#746855" }]
-          },
-          {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [{ "color": "#17263c" }]
-          }
-        ]
+      // Add the OpenStreetMap tiles
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      // Customized icon for markers
+      const customIcon = L.divIcon({
+        className: 'custom-div-icon',
+        html: `<div style="background-color: #f1b988; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
       });
       
-      // Add markers for all project locations
-      const locations = document.querySelectorAll('.project-location');
+      // Array to store all markers
       const markers = [];
       
+      // Add markers for all projects
+      const locations = document.querySelectorAll('.project-location');
       locations.forEach(location => {
         const lat = parseFloat(location.dataset.lat);
         const lng = parseFloat(location.dataset.lng);
         const title = location.querySelector('h3').textContent;
         
-        const marker = new google.maps.Marker({
-          position: { lat, lng },
-          map: map,
-          title: title,
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 10,
-            fillColor: "#f1b988",
-            fillOpacity: 1,
-            strokeWeight: 2,
-            strokeColor: "#ffffff"
-          },
-          animation: google.maps.Animation.DROP
-        });
+        // Create marker
+        const marker = L.marker([lat, lng], {
+          icon: customIcon,
+          title: title
+        }).addTo(map);
         
+        // Create popup
+        marker.bindPopup(`<b>${title}</b><br>${location.querySelector('p').textContent}`);
+        
+        // Store marker
         markers.push(marker);
         
-        // Add click event to location items to center map on marker
+        // Add click event to location items
         location.addEventListener('click', () => {
-          map.setZoom(12);
-          map.setCenter({ lat, lng });
-          
-          // Bounce animation for the clicked marker
-          markers.forEach(m => m.setAnimation(null));
-          marker.setAnimation(google.maps.Animation.BOUNCE);
-          setTimeout(() => marker.setAnimation(null), 1500);
+          map.setView([lat, lng], 15, {
+            animate: true,
+            duration: 1
+          });
+          marker.openPopup();
         });
       });
-    }
+      
+      // Ensure all markers are visible
+      if (markers.length > 0) {
+        const group = new L.featureGroup(markers);
+        map.fitBounds(group.getBounds().pad(0.1));
+      }
+    });
   </script>
 </body>
 </html>
